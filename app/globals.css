@@ -2,20 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* NAVBAR STYLES */
+
+.nav-link {
+  @apply relative py-2 transition-all duration-300;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.active-link {
+  @apply bg-[#D9D9D9] rounded-[33px] px-8 py-4;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #5e5e5e;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: all 0.3s ease;
+}
+
+.active::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.active-link:hover::after {
+  width: 0%;
 }
