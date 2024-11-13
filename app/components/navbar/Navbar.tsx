@@ -45,7 +45,7 @@ const Navbar = () => {
         </div>
 
         {/* Navlinks visible on larger screens */}
-        <div className="hidden lg:flex">
+        <div className="hidden md:flex">
           <ul className="flex items-center gap-6">
             {navLinks.map(({ href, label }) => (
               <li key={href}>
@@ -63,7 +63,7 @@ const Navbar = () => {
         </div>
 
         {/* Icon buttons */}
-        <div className="hidden lg:flex">
+        <div className="hidden md:flex">
           <ul className="flex items-center gap-10">
             {iconButtons.map(({ component, href }, index) => (
               <li key={index}>
@@ -80,7 +80,7 @@ const Navbar = () => {
         </div>
 
         {/* Navbar toggler icon, visible on smaller screens */}
-        <div className="flex lg:hidden">
+        <div className="flex md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="focus:outline-none"
@@ -109,7 +109,7 @@ const Navbar = () => {
           isOpen
             ? "max-h-screen opacity-100 translate-y-0"
             : "max-h-0 opacity-0 -translate-y-full"
-        } w-full shadow-md transition-all duration-300 ease-in-out overflow-hidden lg:hidden transform`}
+        } w-full shadow-md transition-all duration-300 ease-in-out overflow-hidden md:hidden transform`}
       >
         {/* Main navigation links */}
         <ul className="flex flex-col items-center py-8 space-y-8 text-xl font-oswald text-black">
