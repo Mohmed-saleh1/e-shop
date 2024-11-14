@@ -1,10 +1,12 @@
 import React from "react";
-import Navbar from "../navbar/Navbar";
+import HomeHeader from "./HomeHeader";
 
 const HomePage = () => {
-  return <>
-  
-  </>;
+  return (
+    <>
+      <HomeHeader/>
+    </>
+  );
 };
 
 export default HomePage;

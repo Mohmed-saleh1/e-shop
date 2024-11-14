@@ -51,7 +51,7 @@ const Navbar = () => {
               <li key={href}>
                 <Link
                   href={href}
-                  className={`nav-link text-[22px] text-[#5E5E5E] ${
+                  className={`nav-link text-[22px] text-lightGray ${
                     pathname === href ? "active-link font-semibold" : ""
                   }`}
                 >
@@ -112,7 +112,7 @@ const Navbar = () => {
         } w-full shadow-md transition-all duration-300 ease-in-out overflow-hidden md:hidden transform`}
       >
         {/* Main navigation links */}
-        <ul className="flex flex-col items-center py-8 space-y-8 text-xl font-oswald text-black">
+        <ul className="flex flex-col items-center py-8 space-y-8 text-xl text-black">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
               <Link
@@ -134,12 +134,12 @@ const Navbar = () => {
             <li key={index}>
               {href ? (
                 <Link href={href}>
-                  <button className="flex items-center text-2xl text-[#5E5E5E]">
+                  <button className="flex items-center text-2xl text-lightGray">
                     {component}
                   </button>
                 </Link>
               ) : (
-                <button className="flex items-center text-2xl text-[#5E5E5E]">
+                <button className="flex items-center text-2xl text-lightGray">
                   {component}
                 </button>
               )}

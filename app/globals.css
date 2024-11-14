@@ -2,6 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/* DECLARE FONTS FOR TAILWIND CLASSES USE */
+@font-face {
+  font-family: "Abhaya Libre";
+  src: url("/fonts/AbhayaLibre-Regular.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Abhaya Libre";
+  src: url("/fonts/AbhayaLibre-SemiBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Abhaya Libre";
+  src: url("/fonts/AbhayaLibre-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* NAVBAR STYLES */
 
 .nav-link {
@@ -9,7 +38,7 @@
 }
 
 .active-link {
-  @apply bg-[#D9D9D9] rounded-[33px] px-8 py-4;
+  @apply bg-milk rounded-[33px] px-8 py-4;
 }
 
 .nav-link::after {
@@ -38,4 +67,10 @@
 
 .active-link:hover::after {
   width: 0%;
+}
+
+/* HOMEPAGE STYLES */
+
+.section-container {
+  @apply mx-10 md:mx-20 lg:mx-10 xl:mx-36 my-20;
 }
