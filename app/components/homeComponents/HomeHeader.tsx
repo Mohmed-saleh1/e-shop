@@ -5,7 +5,7 @@ import CustomButton from "../customButton/CustomButton";
 const HomeHeader = () => {
   return (
     // Main section container
-    <div className="section-container flex flex-col gap-5">
+    <section className="section-container flex flex-col gap-5">
       {/* Top side section with intro and image */}
       <div className="flex flex-col lg:flex-row font-abhaya gap-10">
         {/* Left side text section */}
@@ -60,7 +60,7 @@ const HomeHeader = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

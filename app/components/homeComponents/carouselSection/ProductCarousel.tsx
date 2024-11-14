@@ -85,7 +85,7 @@ const ProductCarousel = () => {
   };
 
   return (
-    <div className="section-container pt-20">
+    <section className="section-container pt-20">
       {/* Section header */}
       <div className="flex items-center mb-5 font-inter">
         <SectionLine />
@@ -127,7 +127,7 @@ const ProductCarousel = () => {
           itemsToShow={itemsToShow}
         />
       </div>
-    </div>
+    </section>
   );
 };
 
