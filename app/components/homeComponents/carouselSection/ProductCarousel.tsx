@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { IoMdFastforward } from "react-icons/io";
-import SectionLine from "../sectionLine/SectionLine";
+import SectionLine from "../../sectionLine/SectionLine";
 import CarouselNavigation from "./CarouselNavigation";
 import CarouselCard from "./CarouselCard";
 
