@@ -10,7 +10,7 @@ type CarouselCardProps = {
 
 function CarouselCard({category, image, rating }: CarouselCardProps) {
   return (
-    <div className="flex-shrink-0 w-1/4 p-2">
+    <div className="flex-shrink-0 w-full md:w-1/2 lg:w-1/4 p-2">
         {/* Display card in carousel */}
       <div className="bg-carouselCard shadow-carouselShadow border border-black overflow-hidden relative">
         <Image

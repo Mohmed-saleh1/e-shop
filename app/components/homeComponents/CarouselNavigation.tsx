@@ -25,7 +25,7 @@ const CarouselNavigation = ({
       {/* Return to first product button */}
       <button
         onClick={goToFirstProduct}
-        className={`p-5 bg-white rounded-full border border-black text-2xl flex justify-center items-center ${
+        className={`p-3 md:p-5 bg-white rounded-full border border-black text-lg md:text-2xl flex justify-center items-center ${
           currentIndex === 0 ? "text-lightGray" : ""
         }`}
         disabled={currentIndex === 0}
@@ -37,7 +37,7 @@ const CarouselNavigation = ({
         {/* Left (Previous) button */}
         <button
           onClick={prevSlide}
-          className={`p-5 bg-white rounded-full border border-black text-2xl flex justify-center items-center ${
+          className={`p-3 md:p-5 bg-white rounded-full border border-black text-lg md:text-2xl flex justify-center items-center ${
             currentIndex === 0 ? "text-lightGray" : ""
           }`}
           disabled={currentIndex === 0}
@@ -48,7 +48,7 @@ const CarouselNavigation = ({
         {/* Right (Next) button */}
         <button
           onClick={nextSlide}
-          className={`p-5 bg-white rounded-full border border-black text-2xl flex justify-center items-center ${
+          className={`p-3 md:p-5 bg-white rounded-full border border-black text-lg md:text-2xl flex justify-center items-center ${
             isAtLastProduct ? "text-lightGray" : ""
           }`}
           disabled={isAtLastProduct}

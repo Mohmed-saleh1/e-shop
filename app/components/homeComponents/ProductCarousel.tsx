@@ -1,6 +1,5 @@
 "use client";
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoMdFastforward } from "react-icons/io";
 import SectionLine from "../sectionLine/SectionLine";
 import CarouselNavigation from "./CarouselNavigation";
@@ -50,8 +49,26 @@ const products = [
 
 const ProductCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsToShow = 4;
-  const isAtLastProduct = currentIndex >= products.length - itemsToShow;
+  const [itemsToShow, setItemsToShow] = useState(4); // Default items to show on large screens
+
+  // Set the number of items to show based on screen width
+  useEffect(() => {
+    const updateItemsToShow = () => {
+      if (window.innerWidth >= 1024) {
+        setItemsToShow(4); // Large screens: 4 items
+      } else if (window.innerWidth >= 768) {
+        setItemsToShow(2); // Medium screens: 2 items
+      } else {
+        setItemsToShow(1); // Small screens: 1 item
+      }
+    };
+
+    updateItemsToShow();
+    window.addEventListener("resize", updateItemsToShow);
+
+    return () => window.removeEventListener("resize", updateItemsToShow); // Cleanup on component unmount
+  }, []);
+
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -72,9 +89,9 @@ const ProductCarousel = () => {
       {/* Section header */}
       <div className="flex items-center mb-5 font-inter">
         <SectionLine />
-        <h2 className="text-4xl font-semibold">Our Products</h2>
+        <h2 className="text-xl md:text-2xl lg:text-4xl font-semibold">Our Products</h2>
         <button className="flex items-center font-semibold gap-3 ml-auto">
-          <p>View All</p>
+          <p className="text-sm md:text-lg">View All</p>
           <IoMdFastforward />
         </button>
       </div>
@@ -83,11 +100,9 @@ const ProductCarousel = () => {
         {/* Carousel wrapper */}
         <div className="flex overflow-hidden">
           <div
-            className={`flex -mr-60 transition-all duration-500 ${
-              isAtLastProduct && `-mr-0`
-            }`}
+            className={`flex transition-all duration-500`}
             style={{
-              transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)`,
+              transform: `translateX(-${(currentIndex * 100) / itemsToShow}%)`,
             }}
           >
             {/* Map over products array to show a card component for each element */}
