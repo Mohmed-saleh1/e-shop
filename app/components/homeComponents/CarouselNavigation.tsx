@@ -1,4 +1,5 @@
 import React from "react";
+import CarouselButton from "./CarouselButton";
 import { RiPlayReverseLargeFill, RiPlayLargeFill } from "react-icons/ri";
 
 interface CarouselNavigationProps {
@@ -23,38 +24,26 @@ const CarouselNavigation = ({
   return (
     <div className="flex justify-between items-center mt-4">
       {/* Return to first product button */}
-      <button
+      <CarouselButton
         onClick={goToFirstProduct}
-        className={`p-3 md:p-5 bg-white rounded-full border border-black text-lg md:text-2xl flex justify-center items-center ${
-          currentIndex === 0 ? "text-lightGray" : ""
-        }`}
         disabled={currentIndex === 0}
-      >
-        <RiPlayReverseLargeFill />
-      </button>
+        icon={<RiPlayReverseLargeFill />}
+      />
 
       <div className="flex items-center gap-4">
         {/* Left (Previous) button */}
-        <button
+        <CarouselButton
           onClick={prevSlide}
-          className={`p-3 md:p-5 bg-white rounded-full border border-black text-lg md:text-2xl flex justify-center items-center ${
-            currentIndex === 0 ? "text-lightGray" : ""
-          }`}
           disabled={currentIndex === 0}
-        >
-          <RiPlayReverseLargeFill />
-        </button>
+          icon={<RiPlayReverseLargeFill />}
+        />
 
         {/* Right (Next) button */}
-        <button
+        <CarouselButton
           onClick={nextSlide}
-          className={`p-3 md:p-5 bg-white rounded-full border border-black text-lg md:text-2xl flex justify-center items-center ${
-            isAtLastProduct ? "text-lightGray" : ""
-          }`}
           disabled={isAtLastProduct}
-        >
-          <RiPlayLargeFill />
-        </button>
+          icon={<RiPlayLargeFill />}
+        />
       </div>
     </div>
   );
