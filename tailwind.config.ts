@@ -17,12 +17,17 @@ export default {
         abhaya: ["Abhaya Libre", "sans-serif"],
         inter: ["Inter", "sans-serif"],
       },
+      backgroundColor: {
+        carouselCard: "rgba(196, 196, 196, 0.22)",
+        carouselLayer: "rgba(0, 0, 0, 0.59)",
+      },
       backgroundImage: {
         header1: "url('/home/header-1.jpeg')",
         header2: "url('/home/header-2.jpeg')",
       },
       boxShadow: {
         imgShadow: "0px 4px 4px 0px #00000040",
+        carouselShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
       },
     },
   },
