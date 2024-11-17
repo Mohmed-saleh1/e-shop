@@ -11,7 +11,7 @@ function NavigationButton({ direction, onClick }: NavigationButtonProps) {
     // Define testimonials button with onclick function and direction
     <button
       onClick={onClick}
-      className="bg-[#F1F1F1] rounded-[4px] flex justify-center items-center p-4"
+      className="bg-[#F1F1F1] rounded-[4px] flex justify-center items-center p-4 transition-all duration-300 hover:bg-darkGray"
     >
       {direction === "left" ? (
         <GoArrowLeft className="text-4xl" />
