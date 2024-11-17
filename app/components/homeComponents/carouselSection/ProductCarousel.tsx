@@ -89,7 +89,7 @@ const ProductCarousel = () => {
       {/* Section header */}
       <div className="flex items-center mb-5 font-inter">
         <SectionLine />
-        <h2 className="text-xl md:text-2xl lg:text-4xl font-semibold">Our Products</h2>
+        <h2 className="text-sm text-nowrap sm:text-xl md:text-2xl lg:text-4xl font-semibold">Our Products</h2>
         <button className="flex items-center font-semibold gap-3 ml-auto">
           <p className="text-sm md:text-lg">View All</p>
           <IoMdFastforward />
