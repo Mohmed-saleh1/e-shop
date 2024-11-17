@@ -35,6 +35,11 @@ export default {
       screens: {
         xs: "350px",
       },
+    fontWeight: {
+      normal: '400',
+      medium: '500',
+      extrabold: '800', 
+      }
     },
   },
   plugins: [],
