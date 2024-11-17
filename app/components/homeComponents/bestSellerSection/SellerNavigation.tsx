@@ -20,7 +20,7 @@ function SellerNavigation({
       <button
         onClick={onPrev} // Trigger previous slide function
         disabled={isPrevDisabled} // Disable button if isPrevDisabled is true
-        className={`bg-gray-200 hover:bg-darkGray transition-all duration-300 p-2 rounded-full z-10 ${
+        className={`absolute top-1/2 -left-10 transform -translate-y-1/2 bg-gray-200 hover:bg-darkGray transition-all duration-300 p-2 rounded-full z-10 ${
           isPrevDisabled ? "opacity-50 cursor-not-allowed" : "" // Apply styles if disabled
         }`}
       >
@@ -31,7 +31,7 @@ function SellerNavigation({
       <button
         onClick={onNext} // Trigger next slide function
         disabled={isNextDisabled} // Disable button if isNextDisabled is true
-        className={`bg-gray-200 hover:bg-darkGray transition-all duration-300 p-2 rounded-full z-10 ${
+        className={`absolute top-1/2 -right-5 trnasform -translate-y-1/2 bg-gray-200 hover:bg-darkGray transition-all duration-300 p-2 rounded-full z-10 ${
           isNextDisabled ? "opacity-50 cursor-not-allowed" : "" // Apply styles if disabled
         }`}
       >

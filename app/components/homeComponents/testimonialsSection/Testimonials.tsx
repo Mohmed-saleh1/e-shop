@@ -53,7 +53,7 @@ const Testimonials = () => {
 
   return (
     <section className="section-container pt-20 overflow-hidden">
-      <div className="flex items-center gap-10 relative">
+      <div className="hidden lg:flex items-center gap-10 relative">
         {/* Section Image */}
         <div className="min-w-[550px] self-start">
           <Image
@@ -89,7 +89,7 @@ const Testimonials = () => {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="flex gap-4 items-center">
+      <div className="hidden lg:flex gap-4 items-center">
         <NavigationButton
           direction="left"
           onClick={() => handleNavigation("left")}

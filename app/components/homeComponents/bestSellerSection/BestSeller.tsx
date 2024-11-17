@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import SectionLine from "../../sectionLine/SectionLine";
 import BestSellerCard from "./BestSellerCard";
-import SellerNavigation from "./SellerNavigation";
+import SellerNavigation from "./SellerNavigation"; // Import the SellerNavigation component
 
 const sellers = [
   {
@@ -65,7 +65,7 @@ const sellers = [
 
 const BestSeller = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [cardsPerView, setCardsPerView] = useState(1);
+  const [cardsPerView, setCardsPerView] = useState(1); // Default to 1 for server-side rendering
 
   // Determine visible cards based on screen size
   useEffect(() => {
@@ -120,14 +120,13 @@ const BestSeller = () => {
             <div
               className="flex transition-transform duration-300 ease-in-out gap-5"
               style={{
-                transform: `translateX(-${
-                  currentIndex * (100 / cardsPerView)
-                }%)`,
+                transform: `translateX(-${currentIndex * (100 / cardsPerView)}%)`,
               }}
             >
               {sellers.map((item) => (
                 <div
                   key={item.id}
+                  className="flex-none"
                   style={{
                     width: `calc(${100 / cardsPerView}% - 20px)`,
                   }}
@@ -143,7 +142,7 @@ const BestSeller = () => {
             </div>
           </div>
 
-          {/* Seller Navigation Component */}
+          {/* Seller navigation with previous and next buttons */}
           <SellerNavigation
             onPrev={prevSlide}
             onNext={nextSlide}
