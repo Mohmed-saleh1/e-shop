@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import SectionLine from "../../sectionLine/SectionLine";
 import BestSellerCard from "./BestSellerCard";
-import { FaCaretLeft, FaCaretRight } from "react-icons/fa6";
+import SellerNavigation from "./SellerNavigation";
 
 const sellers = [
   {
@@ -65,7 +65,7 @@ const sellers = [
 
 const BestSeller = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [cardsPerView, setCardsPerView] = useState(1); // Default to 1 for server-side rendering
+  const [cardsPerView, setCardsPerView] = useState(1);
 
   // Determine visible cards based on screen size
   useEffect(() => {
@@ -104,7 +104,7 @@ const BestSeller = () => {
 
   return (
     <div className="bg-[#C4C4C438]">
-      <section className="section-container py-20 ">
+      <section className="section-container py-20">
         {/* Section header */}
         <div className="flex items-center mb-5 font-inter">
           <SectionLine />
@@ -114,7 +114,7 @@ const BestSeller = () => {
         </div>
 
         {/* Carousel container */}
-        <div className=" relative mx-2">
+        <div className="relative mx-2">
           {/* Cards container */}
           <div className="overflow-hidden">
             <div
@@ -128,7 +128,6 @@ const BestSeller = () => {
               {sellers.map((item) => (
                 <div
                   key={item.id}
-                  className="flex-none"
                   style={{
                     width: `calc(${100 / cardsPerView}% - 20px)`,
                   }}
@@ -144,27 +143,13 @@ const BestSeller = () => {
             </div>
           </div>
 
-          {/* Navigation buttons */}
-          <button
-            onClick={prevSlide}
-            disabled={currentIndex === 0}
-            className={`absolute top-1/2 -left-10 transform -translate-y-1/2 bg-gray-200 hover:bg-darkGray transition-all duration-300 p-2 rounded-full z-10 ${
-              currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
-            }`}
-          >
-            <FaCaretLeft />
-          </button>
-          <button
-            onClick={nextSlide}
-            disabled={currentIndex >= sellers.length - cardsPerView}
-            className={`absolute top-1/2 -right-5 transform -translate-y-1/2 bg-gray-200 hover:bg-darkGray transition-all duration-300 p-2 rounded-full z-10 ${
-              currentIndex >= sellers.length - cardsPerView
-                ? "opacity-50 cursor-not-allowed"
-                : ""
-            }`}
-          >
-            <FaCaretRight />
-          </button>
+          {/* Seller Navigation Component */}
+          <SellerNavigation
+            onPrev={prevSlide}
+            onNext={nextSlide}
+            isPrevDisabled={currentIndex === 0}
+            isNextDisabled={currentIndex >= sellers.length - cardsPerView}
+          />
         </div>
       </section>
     </div>
