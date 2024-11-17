@@ -1,11 +1,10 @@
-import SignUpPage from "./SignUp/SignUp";
+import HomePage from "./components/homeComponents/HomePage";
 
 
 export default function Home() {
   return (
-    <div>
-      <SignUpPage/>
-    </div>
-  
+    <>
+      <HomePage />
+    </>
   );
 }

@@ -2,22 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-
-}
+/* DECLARE FONTS FOR TAILWIND CLASSES USE */
 @font-face {
   font-family: "Abhaya Libre";
-  src: url("/font/AbhayaLibre-Regular.ttf") format("truetype");
+  src: url("/fonts/AbhayaLibre-Regular.ttf") format("truetype");
+  font-weight: 600;
   font-style: normal;
-  font-weight: 500; 
 }
+
 @font-face {
   font-family: "Abhaya Libre";
-  src: url("/font/AbhayaLibre-ExtraBold.ttf") format("truetype");
+  src: url("/fonts/AbhayaLibre-SemiBold.ttf") format("truetype");
+  font-weight: 700;
   font-style: normal;
-  font-weight: 800; 
 }
+
+@font-face {
+  font-family: "Abhaya Libre";
+  src: url("/fonts/AbhayaLibre-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* NAVBAR STYLES */
+
+.nav-link {
+  @apply relative py-2 transition-all duration-300;
+}
+
+.active-link {
+  @apply bg-milk rounded-[33px] px-8 py-4;
+}
+
+.nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: #5e5e5e;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: all 0.3s ease;
+}
+
+.active::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.active-link:hover::after {
+  width: 0%;
+}
+
+/* HOMEPAGE STYLES */
+
+.section-container {
+  @apply mx-10 md:mx-20 lg:mx-10 xl:mx-36 my-20;
+}
+
+
