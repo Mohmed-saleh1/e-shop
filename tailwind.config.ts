@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         abhaya: ["Abhaya Libre", "sans-serif"],
         inter: ["Inter", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
       },
       backgroundColor: {
         carouselCard: "rgba(196, 196, 196, 0.22)",
@@ -24,6 +25,7 @@ export default {
       backgroundImage: {
         header1: "url('/home/header-1.jpeg')",
         header2: "url('/home/header-2.jpeg')",
+        footer: 'linear-gradient(180deg, rgba(196, 196, 196, 0.022) 0%, rgba(94, 94, 94, 0.22) 57.09%)',
       },
       boxShadow: {
         imgShadow: "0px 4px 4px 0px #00000040",
