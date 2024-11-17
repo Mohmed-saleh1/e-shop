@@ -12,6 +12,15 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        abhaya: ['"Abhaya Libre"', 'sans-serif'],
+    },
+    fontWeight: {
+      normal: '400',
+      medium: '500',
+      bold: '500',
+      extrabold: '800', 
+      }
     },
   },
   plugins: [],
